@@ -1,0 +1,50 @@
+library(shinythemes)
+library(shiny)
+library(DT)
+
+# fluidPage(theme = shinytheme("cerulean"),
+#           # Application title
+#           titlePanel("Old Faithful Geyser Data")
+# )
+# fluidPage(theme = shinytheme("cerulean")
+shinyUI(fluidPage(theme = shinytheme("cerulean"),
+  # sidebarLayout(
+  #   sidebarPanel(
+  #     sliderInput("obs", "Number of observations:", min = 10, max = 500, value = 100)
+  #   ),
+  #   mainPanel(plotOutput("distPlot"))
+  
+  navbarPage(
+    title="VizClean",
+    id="nav",
+    tabPanel("First Tab", value="First Tab",
+             sidebarLayout(
+               sidebarPanel(
+                 
+                 fileInput("file1", "Choose CSV File",
+                           accept = c(
+                             "text/csv",
+                             "text/comma-separated-values,text/plain",
+                             ".csv")
+                 ),
+                 
+                 # selectInput("dataset","Select the dataset", choices=c("mtcars dataset" = "m", "pressure dataset" = "p")),
+                 # tags$hr(), # tags$ 'hr' --> Horizontal line (HTML tags)
+                 sliderInput("n", "Select no. of data rows", min = 2, max = 10, value=6),
+                 tags$hr(),
+                 actionButton("button", "ActionButton"),
+                 tags$hr(),
+                 radioButtons("c", "Radiobuttons", c("Yes", "No"))
+               ),
+               mainPanel(
+                 tabsetPanel(
+                   tabPanel("Dataset",icon = icon('table'), DT::dataTableOutput("Dataset")),
+                   tabPanel("Summary Stats", verbatimTextOutput("summary"))
+                   # tabPanel("Dataset1", tableOutput("table")),
+                            )
+                        )
+             )),
+    tabPanel("Plots", value="Plots")
+  )
+)
+)
