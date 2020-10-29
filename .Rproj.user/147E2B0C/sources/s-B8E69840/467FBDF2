@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601510030724.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "467FBDF2",
+    "lastKnownWriteTime" : 1603919013,
+    "last_content_update" : 1603919013038,
+    "path" : "~/VizClean/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "38,66",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "20",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
